@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="Foodie.User.User" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="User.master.cs" Inherits="Foodie.User.User" %>
 
 <%@ Register Src="~/User/SliderUserControl.ascx" TagPrefix="uc1" TagName="SliderUserControl" %>
 
@@ -34,6 +34,22 @@
   <link href="../TemplateFiles/css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="../TemplateFiles/css/responsive.css" rel="stylesheet" />
+    <!-- jQery -->
+  <script src="../TemplateFiles/js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(function () ) {
+            //this will get with full url at the address bar
+            var url = window.location.href;
+            // passes on every 'a' tag
+            $("#navbarSupportedContent a").each(function ()){
+                if url == (this.href){
+                    $(thsi).closest("li").addClass("active");
+                }
+
+            });
+        });
+
+    </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -60,8 +76,8 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
-              <li class="nav-item active">
-                <a class="nav-link" href="default.aspx">Home <span class="sr-only">(current)</span></a>
+              <li class="nav-item">
+                <a class="nav-link" href="default.aspx">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="Menu.aspx">Menu</a>

@@ -1,5 +1,5 @@
 ﻿
-<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SliderUserControl.ascx.cs" Inherits="Foodie.User.SliderUserControl1" %>
+<%@ Control Language="C#" AutoEventWireup="true" Codefile="SliderUserControl.ascx.cs" Inherits="Foodie.User.SliderUserControl1" %>
 
    <!-- slider section -->
     <section class="slider_section ">

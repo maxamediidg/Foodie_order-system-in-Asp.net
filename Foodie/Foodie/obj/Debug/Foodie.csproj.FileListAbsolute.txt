@@ -1,3 +1,5 @@
+C:\Users\Hp\Documents\food_order\Foodie\Foodie\obj\Debug\Foodie.csproj.CoreCompileInputs.cache
+C:\Users\Hp\Documents\food_order\Foodie\Foodie\obj\Debug\Foodie.csproj.AssemblyReference.cache
 C:\Users\Hp\Documents\food_order\Foodie\Foodie\bin\Foodie.dll.config
 C:\Users\Hp\Documents\food_order\Foodie\Foodie\bin\Foodie.dll
 C:\Users\Hp\Documents\food_order\Foodie\Foodie\bin\Foodie.pdb
@@ -52,8 +54,6 @@ C:\Users\Hp\Documents\food_order\Foodie\Foodie\bin\roslyn\VBCSCompiler.exe
 C:\Users\Hp\Documents\food_order\Foodie\Foodie\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Hp\Documents\food_order\Foodie\Foodie\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Hp\Documents\food_order\Foodie\Foodie\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Hp\Documents\food_order\Foodie\Foodie\obj\Debug\Foodie.csproj.AssemblyReference.cache
-C:\Users\Hp\Documents\food_order\Foodie\Foodie\obj\Debug\Foodie.csproj.CoreCompileInputs.cache
 C:\Users\Hp\Documents\food_order\Foodie\Foodie\obj\Debug\Foodie.csproj.CopyComplete
 C:\Users\Hp\Documents\food_order\Foodie\Foodie\obj\Debug\Foodie.dll
 C:\Users\Hp\Documents\food_order\Foodie\Foodie\obj\Debug\Foodie.pdb
