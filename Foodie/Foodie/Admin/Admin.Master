@@ -31,6 +31,23 @@
       <!-- Style.css -->
       <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
       <link rel="stylesheet" type="text/css" href="../assets/css/jquery.mCustomScrollbar.css">
+    <script type="text/javascript" src="../assets/js/jquery/jquery.min.js"></script>
+
+    <script>
+        $(function () ) {
+            //this will get with full url at the address bar
+            var url = window.location.href;
+            // passes on every 'a' tag
+            $("#navbarSupportedContent a").each(function ()){
+                if url == (this.href){
+                    $(thsi).closest("li").addClass("active");
+                }
+
+            });
+        });
+
+    </script>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -150,11 +167,11 @@
                 <div class="pcoded-wrapper">
                     <nav class="pcoded-navbar">
                         <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
-                        <div class="pcoded-inner-navbar main-menu">
+                        <div class="pcoded-inner-navbar main-menu" id="navbarSupportedContent">
                             <div class="">                           
                             <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Overview</div>
                             <ul class="pcoded-item pcoded-left-item">
-                                <li class="active">
+                                <li>
                                     <a href="Dashboard.aspx">
                                         <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
@@ -165,7 +182,7 @@
                             <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Category Crud</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li>
-                                    <a href="form-elements-component.html">
+                                    <a href="Category.aspx">
                                         <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.form-components.main">Categories</span>
                                         <span class="pcoded-mcaret"></span>
@@ -244,9 +261,9 @@
                                                                 <i class="icofont icofont-home"></i>
                                                             </a>
                                                         </li>
-                                                        <li class="breadcrumb-item"><a href="#!">Breadcrumb</a>
+                                                        <li class="breadcrumb-item"><a href="Dashboard.aspx">Dashboard</a>
                                                         </li>
-                                                        <li class="breadcrumb-item"><a href="#!">Caption Breadcrumb</a>
+                                                        <li class="breadcrumb-item"><a href="#"><% Response.Write(Session["breadCrum"]); %></a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -265,7 +282,7 @@
         
     </form>
     <!-- Required Jquery -->
-<script type="text/javascript" src="../assets/js/jquery/jquery.min.js"></script>
+<%--<script type="text/javascript" src="../assets/js/jquery/jquery.min.js"></script>--%>
 <script type="text/javascript" src="../assets/js/jquery-ui/jquery-ui.min.js"></script>
 <script type="text/javascript" src="../assets/js/popper.js/popper.min.js"></script>
 <script type="text/javascript" src="../assets/js/bootstrap/js/bootstrap.min.js"></script>
