@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Admin\Category.aspx" />
     <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\Product.aspx" />
     <Content Include="assets\css\animate.css\css\animate.css" />
     <Content Include="assets\css\bootstrap\css\bootstrap.min.css" />
     <Content Include="assets\css\jquery.mCustomScrollbar.css" />
@@ -231,6 +232,13 @@
     <Compile Include="Admin\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="Globall.asax.cs">
       <DependentUpon>Globall.asax</DependentUpon>
@@ -308,6 +316,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\Category\" />
+    <Folder Include="Images\Product\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>

@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Category.aspx.cs" Inherits="Foodie.Admin.Category" %>
+<%@ Import Namespace="Foodie" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -50,7 +51,7 @@
                                                 <div>
                                                 <asp:textbox id="txtName" runat="server" cssclass="form-control"
                                                   placeholder="enter category name" required></asp:textbox>
-                                                <asp:hiddenfield id="hdnId"  runat="server" value="0"></asp:hiddenfield>
+                                                <asp:hiddenfield id="hdnId"   runat="server" value="0"></asp:hiddenfield>
                                             </div>
                                                     </div>
                                         
@@ -58,7 +59,7 @@
                                             <label>category image</label>
                                             <div>
                                                 <asp:fileupload id="FuCategoryImage" runat="server" 
-                                                    cssclass="form-control" onChange="imagepreview(this);"/>
+                                                    cssclass="form-control" onchange="ImagePreview(this);"/>
                                             </div>
                                         </div>
                                         <div class="form-check pl-4 ">
@@ -74,7 +75,7 @@
                                                 cousesvalidation="false" OnClick="btnclear_Click" />                                       
                                         </div>
                                         <div>
-                                            <asp:image id="imagecategory" runat="server" cssclass="img-thumbnail" />
+                                            <asp:image id="imagecategory" runat="server"  cssclass="img-thumbnail" />
                                                 
                </div>                                   
          </div>
@@ -84,27 +85,46 @@
                                   <h4 class="sub-title">Category List</h4>
                      <div class="card-block table-border-style">
                          <div class="table-responsive">
-                             <asp:Repeater ID="rCategory"  runat="server">
+                             <asp:Repeater ID="rCategory"  runat="server" OnItemCommand="rCategory_ItemCommand" OnItemDataBound="rCategory_ItemDataBound">
                                     <HeaderTemplate>
-                                     <table>
+                                     <table class="table data-table-export table-hover nowrap">
+                                         <thead>
                                          <tr>
-                                             <th>Name</th>
+                                             <th class="table-plus">Name</th>
                                               <th>Image</th> 
                                              <th>IsActive</th>
                                               <th>CreateDate</th>
-                                              <th>Action</th>
+                                              <th class="table-nosort">Action</th>
                                          </tr>
-                                     </table>
+                                             </thead>
+                                         <tbody>
                                  </HeaderTemplate>
                                  <ItemTemplate>
                                      <tr>
-                                         <td><%#Eval("Name") %></td>
-                                         <td><%#Eval("ImageUrl") %></td>
-                                         <td><%#Eval("IsActive") %></td>
+                                         <td class="tab-plus"><%#Eval("Name") %></td>
+                                         <td>
+                                             <img alt="" width="42px" src="<%# Utils.GetImageUrl(Eval("ImageUrl")) %>" />
+
+                                         </td>
+                                         <td>
+                                             <asp:Label ID="lblIsActive" runat="server" Text='<%# Eval("IsActive") %>'></asp:Label>
+                                         </td>
                                          <td><%#Eval("CreateDate") %></td>
-                                         <td></td>
+                                         <td>
+                                             <asp:LinkButton ID="lnkEdit" Text="Edit" CssClass="badge badge-primary" runat="server"
+                                               CommandArgument='<%# Eval("CategoryId") %>' CommandName="edit"> <i class="ti-pencil"></i>                                            
+                                                 </asp:LinkButton>
+                                             <asp:LinkButton  ID="lnkDelete" runat="server" CommandName="delete" CssClass="badge bg-danger"
+                                                 CommandArgument='<%# Eval("CategoryId") %>' OnClientClick="return confirm('do you went to delete this category?');">
+                                                 <i class="ti-trash"></i>
+                                             </asp:LinkButton>
+                                         </td>
                                      </tr>
                                   </ItemTemplate>
+                                 <FooterTemplate>
+                                     </body>
+                                     </table>
+                                 </FooterTemplate>
                              </asp:Repeater>   
                               
                          </div>
