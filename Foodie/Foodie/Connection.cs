@@ -20,7 +20,7 @@ namespace Foodie
         {
             bool IsValid = false;
             string[] fileExtension = { ".jpg", ".png", ".jpeg" };
-            for (int i = 0; i <= fileExtension.Length - 1; i++)
+            for (int i = 0; i <=fileExtension.Length - 1; i++)
             {
                 if (FileName.Contains(fileExtension[i]))
                 {

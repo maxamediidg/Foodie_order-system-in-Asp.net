@@ -144,7 +144,7 @@
 </div>
 
                  <div class="col-sm-6 col-md-8 col-lg-8 mobile-inputs">
-                                  <h4 class="sub-title">category list</h4>
+                                  <h4 class="sub-title">Category list</h4>
                      <div class="card-block table-border-style">
                          <div class="table-responsive">
                              <asp:repeater id="rProduct"  runat="server" OnItemCommand="rProduct_ItemCommand" OnItemDataBound="rProduct_ItemDataBound">
