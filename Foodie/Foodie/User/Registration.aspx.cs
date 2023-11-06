@@ -24,7 +24,7 @@ namespace Foodie.User
                 {
                     getUserDetails();
                 }
-                else if(Session["userId"] !=null)
+                else if(Session["Userid"] !=null)
                 {
                     Response.Redirect("Default.aspx");
                 }
@@ -37,7 +37,7 @@ namespace Foodie.User
             bool isValidToExecute = false;
             int userId = Convert.ToInt32(Request.QueryString["id"]);
             con = new SqlConnection(Connection.GetConnectionString());
-            cmd = new SqlCommand("User_Crud", con);
+            cmd = new SqlCommand("[User_Crud]", con);
             cmd.Parameters.AddWithValue("@Action", userId == 0 ? "INSERT" : "UPDATE");
             cmd.Parameters.AddWithValue("@UserId", userId);
             cmd.Parameters.AddWithValue("@Name", txtName.Text.Trim());

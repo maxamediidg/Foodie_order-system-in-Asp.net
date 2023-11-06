@@ -13,5 +13,11 @@ namespace Foodie.Admin
         {
 
         }
+
+        protected void lblLogOut_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("../User/Login.aspx");
+        }
     }
 }
