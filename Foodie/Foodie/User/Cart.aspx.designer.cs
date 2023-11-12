@@ -11,7 +11,7 @@ namespace Foodie.User
 {
 
 
-    public partial class Menu
+    public partial class Cart
     {
 
         /// <summary>
@@ -24,21 +24,12 @@ namespace Foodie.User
         protected global::System.Web.UI.WebControls.Label lblmsg;
 
         /// <summary>
-        /// rCategory control.
+        /// rCartItem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rCategory;
-
-        /// <summary>
-        /// rProducts control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rProducts;
+        protected global::System.Web.UI.WebControls.Repeater rCartItem;
     }
 }

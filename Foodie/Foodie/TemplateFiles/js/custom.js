@@ -102,3 +102,31 @@ $(".client_owl-carousel").owlCarousel({
         }
     }
 });
+
+(function ($) {
+    /*   Quatity change*/
+
+    var ProQty = $('.pro-qty');
+    ProQty.prepend('<span class="dec qtybtn" >-</span>');
+    ProQty.append('<span class="inc qtybtn" >+</span>');
+    ProQty.on('click', '.qtybtn', function () {
+        var $button = $(this);
+        var oldValue = $button.parent().find('input').val();
+        if ($button.hasClass('inc')) {
+            if (oldValue >= 10) {
+                var newval = parseFloat(oldValue);
+
+            } else {
+                newval = parseFloat(oldValue) + 1;
+            }
+        }
+            else {
+                if (oldValue > 1) {
+                    var newval = parseFloat(oldValue) - 1;
+                } else {
+                    newval = 1;
+                }
+            }
+            $button.parent().find('input').val(newval);
+        });
+    })(jQuery);

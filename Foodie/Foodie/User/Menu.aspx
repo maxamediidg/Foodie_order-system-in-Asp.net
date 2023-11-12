@@ -9,13 +9,16 @@
     <section class="food_section layout_padding">
         <div class="container">
             <div class="heading_container heading_center">
+                <div class="align-self-end">
+                    <asp:Label ID="lblmsg" runat="server" Visible="false"></asp:Label>
+                </div>
                 <h2>Our Menu
                 </h2>
             </div>
 
             <ul class="filters_menu">
                 <li class="active" data-filter="*" data-id="0">All</li>
-                <asp:Repeater ID="rCategory" runat="server">
+                <asp:Repeater ID="rCategory" runat="server" >
                     <ItemTemplate>
                            <li data-filter=".<%# Regex.Replace(Eval("Name").ToString().ToLower(),@"\s+","") %>" 
                                data-id="<%# Eval("CategoryId") %>"><%# Eval("Name") %></li>
@@ -26,7 +29,7 @@
 
             <div class="filters-content">
                 <div class="row grid">
-                    <asp:Repeater ID="rProducts" runat="server">
+                    <asp:Repeater ID="rProducts" runat="server" OnItemCommand="rProducts_ItemCommand" >
                         <ItemTemplate>
                             <div class="col-sm-6 col-lg-4 all <%# Regex.Replace(Eval("CategoryName").ToString().ToLower(),@"\s+","") %>">
                                 <div class="box">
@@ -42,7 +45,7 @@
                                             <div class="options">
                                                 <h6>$<%# Eval("Price") %></h6>
                                                <asp:LinkButton runat="server" ID="lbAddToCart" CommandName="addTocart"
-                                                   CommandArgument='  <%#("ProductId") %>' >
+                                                   CommandArgument='  <%# Eval("ProductId") %>' >
                                                     <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background: new 0 0 456.029 456.029;" xml:space="preserve">
                                                         <g>
                                                             <g>
