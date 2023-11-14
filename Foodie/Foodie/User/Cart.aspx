@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="book_section layout_padding">
+    <section class="book_section layout_padding">
         <div class="container">
             <div class="heading_container">
                 <div class="align-self-end">
@@ -13,7 +13,7 @@
                 <h2>your Shopping Cart</h2>
             </div>
         </div>
-    </div>
+    </section>
 
     <div class="container">
         <asp:Repeater ID="rCartItem" runat="server" OnItemCommand="rCartItem_ItemCommand" OnItemDataBound="rCartItem_ItemDataBound">
